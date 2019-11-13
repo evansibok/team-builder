@@ -9,13 +9,13 @@ import MembersList from './components/MembersList';
 const initialMembers = [
   {
     id: uuid(),
-    fullName: "Chioma",
+    full_name: "Chioma",
     email: "chi@gmail.com",
     role: "software engineer"
   },
   {
     id: uuid(),
-    fullName: "Evans",
+    full_name: "Evans",
     email: "evans@gmail.com",
     role: "ux engineer"
   }
@@ -24,16 +24,16 @@ const initialMembers = [
 
 function App() {
 
-  const [members, setMembers] = useState(initialMembers);
+  const [ membersList, setMembersList ] = useState(initialMembers);
 
   useEffect(() => {
-    setMembers(members)
-  }, [members])
+    setMembersList(membersList)
+  }, [])
 
   return (
     <div className="App">
-      <Form members={members} />
-      <MembersList members={members} />
+      <Form membersList={membersList} setMembersList={setMembersList}/>
+      <MembersList membersList={membersList} />
     </div>
   );
 }

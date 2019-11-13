@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import uuid from "uuid";
 
 const initialForm = {
-  id: uuid(),
-  fullName: "",
+  full_name: "",
   email: "",
   role: ""
 };
-const Form = ({ members }) => {
-  console.log(members);
 
+const Form = ({ membersList, setMembersList }) => {
   const [form, setForm] = useState(initialForm);
 
   const changeHandler = evt => {
@@ -21,7 +19,14 @@ const Form = ({ members }) => {
 
   const submitHandler = evt => {
     evt.preventDefault();
-    members.concat(form);
+    const newMember = {
+      id: uuid(),
+      full_name: form.full_name,
+      email: form.email,
+      role: form.role
+    };
+    const newMembersList = membersList.concat(newMember);
+    setMembersList(newMembersList);
   };
 
   return (
@@ -29,7 +34,7 @@ const Form = ({ members }) => {
       <form onSubmit={submitHandler}>
         <label>
           Full Name:
-          <input type="text" name="fullName" onChange={changeHandler} />
+          <input type="text" name="full_name" onChange={changeHandler} />
         </label>
         <br />
         <br />

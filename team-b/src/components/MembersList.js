@@ -1,13 +1,14 @@
 import React from 'react'
 
-const MembersList = ({ members }) => {
-  
+const MembersList = ({ membersList }) => {
+
+  console.log(membersList)
   return (
     <div>
       {
-        members.map(m => {
+        membersList && membersList.map(m => {
           return <div key={m.id} className="member_card">
-            <h3>{m.fullName}</h3>
+            <h3>{m.full_name}</h3>
             <h4>{m.email}</h4>
             <h4>{m.role}</h4>
           </div>
