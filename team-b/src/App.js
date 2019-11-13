@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const initialMembers = [
@@ -18,10 +18,22 @@ const initialMembers = [
 function App() {
 
   const [ members, setMembers ] = useState(initialMembers);
+
+  useEffect(() => {
+    setMembers(members)
+  }, [members])
   
   return (
     <div className="App">
-      
+      {
+        members.map(m => {
+          return <div>
+            <h3>{m.fullName}</h3>
+            <h4>{m.email}</h4>
+            <h4>{m.role}</h4>
+          </div>
+        })
+      }
     </div>
   );
 }
