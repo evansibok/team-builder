@@ -4,6 +4,7 @@ import './App.css';
 
 
 import Form from './components/Form';
+import MembersList from './components/MembersList';
 
 const initialMembers = [
   {
@@ -23,24 +24,16 @@ const initialMembers = [
 
 function App() {
 
-  const [ members, setMembers ] = useState(initialMembers);
+  const [members, setMembers] = useState(initialMembers);
 
   useEffect(() => {
     setMembers(members)
   }, [members])
-  
+
   return (
     <div className="App">
-      <Form members={members} initialMembers={initialMembers}/>
-      {
-        members.map(m => {
-          return <div key={m.id}>
-            <h3>{m.fullName}</h3>
-            <h4>{m.email}</h4>
-            <h4>{m.role}</h4>
-          </div>
-        })
-      }
+      <Form members={members} />
+      <MembersList members={members} />
     </div>
   );
 }

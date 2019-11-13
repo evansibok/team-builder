@@ -7,10 +7,10 @@ const initialForm = {
   email: "",
   role: ""
 };
-const Form = ({ members, initialMembers }) => {
+const Form = ({ members }) => {
   console.log(members);
 
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState(initialForm);
 
   const changeHandler = evt => {
     setForm({
@@ -21,7 +21,7 @@ const Form = ({ members, initialMembers }) => {
 
   const submitHandler = evt => {
     evt.preventDefault();
-    initialMembers.concat(form);
+    members.concat(form);
   };
 
   return (
