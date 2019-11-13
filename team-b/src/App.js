@@ -24,7 +24,7 @@ const initialMembers = [
 
 function App() {
 
-  const [ membersList, setMembersList ] = useState(initialMembers);
+  const [membersList, setMembersList] = useState(initialMembers);
 
   useEffect(() => {
     setMembersList(membersList)
@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <Form membersList={membersList} setMembersList={setMembersList}/>
+      <Form membersList={membersList} setMembersList={setMembersList} />
       <MembersList membersList={membersList} />
     </div>
   );

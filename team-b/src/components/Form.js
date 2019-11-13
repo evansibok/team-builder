@@ -51,6 +51,8 @@ const Form = ({ membersList, setMembersList }) => {
         <br />
         <br />
         <button type="submit">Add Member</button>
+        <br />
+        <br />
       </form>
     </div>
   );
