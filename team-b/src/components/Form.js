@@ -27,6 +27,7 @@ const Form = ({ membersList, setMembersList }) => {
     };
     const newMembersList = membersList.concat(newMember);
     setMembersList(newMembersList);
+    setForm(initialForm)
   };
 
   return (

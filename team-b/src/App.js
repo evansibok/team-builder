@@ -28,12 +28,16 @@ function App() {
 
   useEffect(() => {
     setMembersList(membersList)
-  }, [])
+  }, [membersList])
+
+  const editHandler = () => {
+
+  }
 
   return (
     <div className="App">
       <Form membersList={membersList} setMembersList={setMembersList} />
-      <MembersList membersList={membersList} />
+      <MembersList editHandler={editHandler} membersList={membersList} />
     </div>
   );
 }
