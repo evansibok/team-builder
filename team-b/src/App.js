@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import uuid from 'uuid';
 import './App.css';
 
+
+import Form from './components/Form';
+
 const initialMembers = [
   {
     id: uuid(),
@@ -28,6 +31,7 @@ function App() {
   
   return (
     <div className="App">
+      <Form members={members} initialMembers={initialMembers}/>
       {
         members.map(m => {
           return <div key={m.id}>
